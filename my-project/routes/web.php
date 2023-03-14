@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorEjercicio1;
+USE App\Http\Controllers\ControladorEjercicio2;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/ej1', [ControladorEjercicio1::class, 'ej1Parametro']);
+Route::get('/parametros/{param1}/{param2}/{param3}/{param4}', [ControladorEjercicio2::class, 'pruebaParametros']);
+
